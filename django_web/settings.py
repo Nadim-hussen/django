@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'greeting',
-    'new_year'
+    'new_year',
+    'task'
 ]
 
 MIDDLEWARE = [
