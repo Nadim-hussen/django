@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,10 +8,18 @@
     <title>Crud Operation</title>
 </head>
 <body>
-    <div class="w-screen min-h-screen bg-blue-300">
-        <div class="bg-blue-600 p-2 text-center font-medium capitalize text-xl">
-            <h2>hello task</h2>
+    <div class="w-screen min-h-screen bg-blue-300 text-center">
+        <div class="bg-blue-600 p-2 text-center font-medium capitalize text-xl text-white">
+            <h2>All Task</h2>
         </div>
+        <ul class="w-screen flex justify-center align-center flex-col gap-y-3 mt-4">
+            {% for task in tasks %}
+            <li>
+
+                {{task}}
+            </li>
+            {% endfor %}
+        </ul>
     </div>
     <script src="https://cdn.tailwindcss.com"></script>
 </body>
