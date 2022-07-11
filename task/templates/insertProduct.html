@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crud Operation</title>
+</head>
+<body>
+    <h1 class="bg-green-600 text-[20px] font-bold text-center py-2">Insert Products</h1>
+    <div class="w-screen flex justify-center align-center">
+        <form action="" method="POST" enctype="multipart/form-data" class="my-3">
+            {% csrf_token %}
+
+            <div class="mb-2 flex justify-end text-[18px] font-medium align-start gap-x-2">
+                <label>Product Name :</label>
+                <input type="text" name="name" required class="border border-black"/>
+            </div>
+            <div class="mb-2  flex justify-end text-[18px] font-medium align-start gap-x-2">
+                <label>Price :</label>
+                <input type="number" name="price" required class="border border-black"/>
+            </div>
+            <div class="mb-2 flex justify-end text-[18px] font-medium align-start gap-x-2">
+                <label>Description :</label>
+                <textarea name="description" cols="50" rows="5" required class="border border-black resize-none"></textarea>
+            </div>
+            <div class="mb-2 flex justify-end text-[18px] font-medium align-start gap-x-2">
+                <label>Image</label>
+                <input type="file" required name="image" class="border border-black resize-none" />
+            </div>
+            <div class="flex justify-center align-center">
+                <button type="submit" class="p-2 bg-gray-500 ">Submit</button>
+            </div>
+        </form>
+    </div>
+    <script src="https://cdn.tailwindcss.com"></script>
+</body>
+</html>
