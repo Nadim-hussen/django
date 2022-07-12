@@ -2,12 +2,12 @@ from django.contrib import messages
 from itertools import product
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
-from .models import Item
+from .models import Item,upload_post
 # Create your views here.
 
 # tasks = ['foo','woe','bar','baz','all','is','well']
 def index(request):
-    products = Item.objects.all()
+    products = upload_post.objects.all()
     context = {
         'product':products
     }
@@ -15,7 +15,7 @@ def index(request):
 
 def insert(request):
     if request.method == "POST":
-        prod = Item()
+        prod = upload_post()
         prod.name = request.POST.get('name')
         prod.price = request.POST.get('price')
         prod.description = request.POST.get('description')
